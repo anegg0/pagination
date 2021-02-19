@@ -24,43 +24,23 @@ function showPage(list, page) {
    const endIndex = page  * 9;
   // select the element with a class of `student-list` and assign it to a variable
   // set the innerHTML property of the variable you just created to an empty string
-   studentList = '';
 
+   let studentList = document.querySelector('.student-list');
+   studentList.innerHTML = '';
   // loop over the length of the `list` parameter
   for (let i = 0; i < list.length; i++) {
-    if (i >= startIndex && i <= endIndex -1) {
-   let studentsUl = document.querySelector('.student-list');
-   console.log(studentsUl);
-   let li = document.createElement('li');
-   li.classList.add('student-item');
-   studentsUl.appendChild(li);
-   let divStudents = document.createElement('div');
-   divStudents.classList.add('student-details');
-   li.appendChild(divStudents);
-   let img = document.createElement('img');
-   img.classList.add('avatar');
-   img.src=list[i].picture.thumbnail;
-   divStudents.appendChild(img);
-   let h3 = document.createElement('h3');
-   divStudents.appendChild(h3);
-   h3.innerText = `${list[i].name.first} ${list[i].name.last}`;
-   let spanEmail = document.createElement('span');
-   spanEmail.classList.add('email');
-   spanEmail.innerText = list[i].email;
-   divStudents.appendChild(spanEmail);
-   let divDetails = document.createElement('div');
-   divDetails.classList.add('joined-details');
-   li.appendChild(divDetails);
-   let spanDate = document.createElement('span');
-   spanDate.classList.add('date');
-   spanDate.innerText = list[i].registered.date;
-   divDetails.appendChild(spanDate);
-// li = document.createElement('li');
-      //  const h3 = document.querySelector('h3');
-      //  const divStudentDetails = document.querySelector('div #student-details');
-      //  h3.textContent = `${list[i].name.first} ${list[i].name.last}`;
-
-      // console.log(list[i].name.last) 
+    if (i >= startIndex && i < endIndex ) {
+let studentItem = `<li class="student-item cf">
+    <div class="student-details">
+      <img class="avatar" src="${list[i].picture.thumbnail}" alt="Profile Picture">
+      <h3>${list[i].name.first} ${list[i].name.last}</h3>
+      <span class="email">${list[i].email}</span>
+    </div>
+    <div class="joined-details">
+      <span class="date">Joined ${list[i].registered.date}</span>
+    </div>
+  </li>`;
+  studentList.insertAdjacentHTML('beforeend', studentItem);
     } 
   }
     // inside the loop create a conditional to display the proper students
@@ -74,9 +54,20 @@ showPage(data, 2);
 Create the `addPagination` function
 This function will create and insert/append the elements needed for the pagination buttons
 */
-function addPagination(params) {
-   
-}
+// function addPagination(data) {
+  // const pages
+ // how many pages can be displayed?
+//  let numberOfPages = Math.ceil(data.length / 9);
+// // 
+// for (let i = 0;i < numberOfPages.length; i++) 
+// let pagesLeft = pages.length;
+//   if (page content is less than 1) {
+//     page element class is null 
+//   } 
+// } 
+
+ //create an event listener that calls showpage with the relevant args
+
 
 
 // Call functions
