@@ -70,11 +70,12 @@ firstButton.className = 'active';
   linkList.addEventListener('click', (e) => {
    if (e.target.tagName === 'BUTTON') {
    const active =  document.querySelector('.active'); 
-   active.className = '';
+let numButton = e.target.textContent;
+   console.log(numButton);
+showPage(data, numButton);
    }
 
-  })
-}
+  })}
   // create an event listener on the `link-list` element
     // if the click target is a button:
       // remove the "active" class from the previous button
