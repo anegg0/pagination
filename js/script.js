@@ -62,14 +62,14 @@ for (let i = 1; i <= numOfPages; i++) {
     // insert the above elements
 linkList.insertAdjacentHTML('beforeend', button);
   // give the first pagination button a class of "active"
-  if (i == 1) {
 const firstButton = document.querySelector('button')
 firstButton.className = 'active';
-  }
 
   linkList.addEventListener('click', (e) => {
    if (e.target.tagName === 'BUTTON') {
    const active =  document.querySelector('.active'); 
+
+firstButton.className = '';
 let numButton = e.target.textContent;
    console.log(numButton);
 showPage(data, numButton);
