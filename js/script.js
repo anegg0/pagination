@@ -66,6 +66,15 @@ linkList.insertAdjacentHTML('beforeend', button);
 const firstButton = document.querySelector('button')
 firstButton.className = 'active';
   }
+
+  linkList.addEventListener('click', (e) => {
+   if (e.target.tagName === 'BUTTON') {
+   const active =  document.querySelector('.active'); 
+   active.className = '';
+   }
+
+  })
+}
   // create an event listener on the `link-list` element
     // if the click target is a button:
       // remove the "active" class from the previous button
@@ -80,7 +89,7 @@ firstButton.className = 'active';
 //   if (page content is less than 1) {
 //     page element class is null 
 //   } 
-} 
+
 addPagination(data);
  //create an event listener that calls showpage with the relevant args
 
