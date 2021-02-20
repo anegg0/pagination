@@ -10,8 +10,8 @@ For assistance:
 */
 
 /*
-Create the `showPage` function
 This function will create and insert/append the elements needed to display a "page" of nine students
+it takes a set of data and a number as arguments and builds a set of 9 HTML/DOM elements each representing a subset of the inputed data (studentItem)
 */
 function showPage(list, page) {
   const startIndex = page * 9 - 9;
@@ -34,11 +34,11 @@ function showPage(list, page) {
     }
   }
 }
-// showPage(data, 2);
 
 /*
-Create the `addPagination` function
-This function will create and insert/append the elements needed for the pagination buttons
+This function will create and insert/append the elements needed for the pagination buttons,
+it takes a set of data as arguments, builds a set of HTML/DOM elements each representing a navigation button and 'listens' to a click event on any button to call the showPage
+function.
 */
 function addPagination(list) {
   // create a variable to calculate the number of pages needed
