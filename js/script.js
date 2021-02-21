@@ -61,10 +61,9 @@ function addPagination(list) {
     linkList.addEventListener("click", (e) => {
       if (e.target.tagName === "BUTTON") {
         const active = document.querySelector(".active");
-
-        firstButton.className = "";
-        let numButton = e.target.textContent;
-        console.log(numButton);
+       active.className = "";
+       const activeButton = e.target.className = 'active';
+       let numButton = e.target.textContent;
         showPage(data, numButton);
       }
     });
